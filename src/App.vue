@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import User from '@/components/user';
+</script>
 
 <template>
   <IxRow class="h-full">
-    <IxCol class="h-full" flex="280px" />
+    <IxCol class="h-full" flex="280px"> <User /> </IxCol>
     <IxCol flex="auto" />
     <IxCol flex="360px" />
   </IxRow>

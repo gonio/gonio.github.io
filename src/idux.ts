@@ -20,8 +20,6 @@ const globalConfig = createGlobalConfig({
   icon: { loadIconDynamically },
 });
 
-const install = (app: App): void => {
+export function setupIdux(app: App) {
   app.use(IduxCdk).use(IduxComponents).use(globalConfig);
-};
-
-export default { install };
+}
