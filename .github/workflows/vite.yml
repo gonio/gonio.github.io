@@ -54,4 +54,4 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: './dist/*'
           remote_path: '/home/hyz/todolist'
-          args: '-p 22345'
+          port: 22345
