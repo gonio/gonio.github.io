@@ -39,7 +39,9 @@ jobs:
           pnpm run build
 
       - name: Deploy
-        uses: eunchurn/action-publish@v1.1.1
+        uses: s0/git-publish-subdir-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
-          BRANCH_NAME: 'release'
+          REPO: self
+          BRANCH: release
+          FOLDER: dist
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY }}
