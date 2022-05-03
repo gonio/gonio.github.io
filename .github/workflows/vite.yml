@@ -37,3 +37,9 @@ jobs:
       - name: Build
         run: |
           pnpm run build
+
+      - name: Deploy
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            BRANCH: release
+            FOLDER: dist
