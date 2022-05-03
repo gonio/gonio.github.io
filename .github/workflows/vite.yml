@@ -39,8 +39,7 @@ jobs:
           pnpm run build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.DEPLOY }}
-          BRANCH: release
-          FOLDER: dist
+        uses: eunchurn/action-publish@v1.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
+          BRANCH_NAME: 'release'
