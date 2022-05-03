@@ -6,14 +6,8 @@ import windiCSS from 'vite-plugin-windicss';
 import VitePluginCertificate from 'vite-plugin-mkcert';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { configHtmlPlugin } from './html';
-// import { configPwaConfig } from './pwa';
 import { configMockPlugin } from './mock';
 import Inspector from 'vite-plugin-vue-inspector';
-// import { configCompressPlugin } from './compress';
-// import { configStyleImportPlugin } from './styleImport';
-// import { configVisualizerConfig } from './visualizer';
-// import { configThemePlugin } from './theme';
-// import { configSvgIconsPlugin } from './svgSprite';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const { VITE_USE_MOCK /*, VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE*/ } =
@@ -38,34 +32,11 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   // vite-plugin-html
   vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));
 
-  // vite-plugin-svg-icons
-  // vitePlugins.push(configSvgIconsPlugin(isBuild));
-
   // vite-plugin-mock
   VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
 
   // vite-plugin-purge-icons
   vitePlugins.push(purgeIcons());
-
-  // vite-plugin-style-import
-  // vitePlugins.push(configStyleImportPlugin(isBuild));
-
-  // rollup-plugin-visualizer
-  // vitePlugins.push(configVisualizerConfig());
-
-  // vite-plugin-theme
-  // vitePlugins.push(configThemePlugin(isBuild));
-
-  // The following plugins only work in the production environment
-  // if (isBuild) {
-  //   // rollup-plugin-gzip
-  //   vitePlugins.push(
-  //     configCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
-  //   );
-  //
-  //   // vite-plugin-pwa
-  //   vitePlugins.push(configPwaConfig(viteEnv));
-  // }
 
   return vitePlugins;
 }
