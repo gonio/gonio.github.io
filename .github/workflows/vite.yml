@@ -1,4 +1,4 @@
-name: NodeJS with Vite
+name: Vite Build
 
 on:
   push:
@@ -38,10 +38,19 @@ jobs:
         run: |
           pnpm run build
 
-      - name: Deploy
+      - name: Deploy to release
         uses: s0/git-publish-subdir-action@master
         env:
           REPO: self
           BRANCH: release
           FOLDER: dist
           GITHUB_TOKEN: ${{ secrets.DEPLOY }}
+
+      - name: Deploy to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'ubuntu'
+          server: '${{ secrets.SERVER_IP }}'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './dist/*'
+          remote_path: '/home/hyz/todolist'
