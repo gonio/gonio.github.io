@@ -39,6 +39,7 @@ specifiers:
   vite-plugin-mock: ^2.9.6
   vite-plugin-purge-icons: ^0.8.1
   vite-plugin-pwa: ^0.11.13
+  vite-plugin-vue-inspector: ^0.5.3
   vite-plugin-vue-setup-extend: ^0.4.0
   vite-plugin-windicss: ^1.8.3
   vue: ^3.2.25
@@ -88,6 +89,7 @@ devDependencies:
   vite-plugin-mock: 2.9.6_ts33iwsdlmftmwr5cg7xu6ljwa
   vite-plugin-purge-icons: 0.8.1_vite@2.9.1
   vite-plugin-pwa: 0.11.13_vite@2.9.1
+  vite-plugin-vue-inspector: 0.5.3_vite@2.9.1
   vite-plugin-vue-setup-extend: 0.4.0_vite@2.9.1
   vite-plugin-windicss: 1.8.3_vite@2.9.1
   vue-eslint-parser: 8.3.0_eslint@8.12.0
@@ -2200,6 +2202,12 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /builtins/4.1.0:
+    resolution: {integrity: sha512-1bPRZQtmKaO6h7qV1YHXNtr6nCK28k0Zo95KM4dXfILcZZwoHJBN1m3lfLv9LPkcOZlrSr+J1bzMaZFO98Yq0w==}
+    dependencies:
+      semver: 7.3.5
+    dev: true
+
   /call-bind/1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
     dependencies:
@@ -2785,6 +2793,12 @@ packages:
     dev: true
     optional: true
 
+  /esbuild-node-loader/0.6.5:
+    resolution: {integrity: sha512-uPP+dllWm38cFvDysdocutN3lfe5pTIbddAHp1ENyLzpHYqE2r+3Wo+pfg9X3p8DFWwzIisft5YkeBIthIcixw==}
+    dependencies:
+      esbuild: 0.14.31
+    dev: true
+
   /esbuild-openbsd-64/0.14.31:
     resolution: {integrity: sha512-NRAAPPca05H9j9Xab0kVXK0V6/pyZGGy8d2Y8KS0BMwWEydlD4KCJDmH8/7bWCKYLRGOOCE9/GPBJyPWHFW3sg==}
     engines: {node: '>=12'}
@@ -2793,6 +2807,14 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /esbuild-register/3.3.2_esbuild@0.14.31:
+    resolution: {integrity: sha512-jceAtTO6zxPmCfSD5cBb3rgIK1vmuqCKYwgylHiS1BF4pq0jJiJb4K2QMuqF4BEw7XDBRatYzip0upyTzfkgsQ==}
+    peerDependencies:
+      esbuild: '>=0.12 <1'
+    dependencies:
+      esbuild: 0.14.31
+    dev: true
 
   /esbuild-sunos-64/0.14.31:
     resolution: {integrity: sha512-9uA+V8w9Eehu4ldb95lPWdgCMcMO5HH6pXmfkk5usn3JsSZxKdLKsXB4hYgP80wscZvVYXJl2G+KNxsUTfPhZw==}
@@ -3002,6 +3024,17 @@ packages:
       v8-compile-cache: 2.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /esno/0.14.1:
+    resolution: {integrity: sha512-yDFYw6dGUjCT1qKsdG7WOc/RzIh/qwxUEVZ+ohCltaxBxEFMNqeqbQL9xjRl6Yvdwrfc5OCjUA9JbFmuu/8BKg==}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+      esbuild: 0.14.31
+      esbuild-node-loader: 0.6.5
+      esbuild-register: 3.3.2_esbuild@0.14.31
+      import-meta-resolve: 1.1.1
     dev: true
 
   /espree/9.3.1:
@@ -3439,6 +3472,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /import-meta-resolve/1.1.1:
+    resolution: {integrity: sha512-JiTuIvVyPaUg11eTrNDx5bgQ/yMKMZffc7YSjvQeSMXy58DO2SQ8BtAf3xteZvmzvjYh14wnqNjL8XVeDy2o9A==}
+    dependencies:
+      builtins: 4.1.0
+    dev: true
+
   /imurmurhash/0.1.4:
     resolution: {integrity: sha1-khi5srkoojixPcT7a21XbyMUU+o=}
     engines: {node: '>=0.8.19'}
@@ -3813,6 +3852,13 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+
+  /magic-string/0.26.1:
+    resolution: {integrity: sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==}
+    engines: {node: '>=12'}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
 
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -4499,6 +4545,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /shell-quote/1.7.3:
+    resolution: {integrity: sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==}
+    dev: true
+
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -5100,6 +5150,25 @@ packages:
       workbox-window: 6.5.2
     transitivePeerDependencies:
       - '@types/babel__core'
+      - supports-color
+    dev: true
+
+  /vite-plugin-vue-inspector/0.5.3_vite@2.9.1:
+    resolution: {integrity: sha512-TjeuLk2liSXRzWddPqFoVKfB5Ktm2cr+ZWP8paG7k+beO6AeNm2AEDVgTSpTXZbhPDc9Tq9Su3WxF/q9P7RKyw==}
+    peerDependencies:
+      vite: ^2.0.0
+    dependencies:
+      '@babel/core': 7.17.8
+      '@babel/plugin-syntax-import-meta': 7.10.4_@babel+core@7.17.8
+      '@babel/plugin-transform-typescript': 7.16.8_@babel+core@7.17.8
+      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.17.8
+      '@vue/compiler-dom': 3.2.31
+      chalk: 4.1.2
+      esno: 0.14.1
+      magic-string: 0.26.1
+      shell-quote: 1.7.3
+      vite: 2.9.1_less@4.1.2
+    transitivePeerDependencies:
       - supports-color
     dev: true
 

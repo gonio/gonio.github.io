@@ -8,6 +8,7 @@ import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { configHtmlPlugin } from './html';
 // import { configPwaConfig } from './pwa';
 import { configMockPlugin } from './mock';
+import Inspector from 'vite-plugin-vue-inspector';
 // import { configCompressPlugin } from './compress';
 // import { configStyleImportPlugin } from './styleImport';
 // import { configVisualizerConfig } from './visualizer';
@@ -28,6 +29,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     VitePluginCertificate({
       source: 'coding',
     }),
+    Inspector(),
   ];
 
   // vite-plugin-windicss
