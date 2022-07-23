@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@iconify/iconify": "^2.2.1",
-    "@idux/cdk": "1.0.0-beta.7",
-    "@idux/components": "1.0.0-beta.7",
-    "@idux/pro": "1.0.0-beta.7",
+    "@idux/cdk": "*",
+    "@idux/components": "*",
+    "@idux/pro": "*",
     "@vue/runtime-core": "^3.2.31",
     "@vue/shared": "^3.2.31",
     "axios": "^0.26.1",
